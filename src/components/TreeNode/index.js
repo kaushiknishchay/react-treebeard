@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import isArray from 'lodash/isArray';
 import isFunction from 'lodash/isFunction';
 
 import defaultAnimations from '../../themes/animations';
@@ -56,7 +55,7 @@ class TreeNode extends PureComponent {
         }
 
         let children = node.children;
-        if (!isArray(children)) {
+        if (!Array.isArray(children)) {
             children = children ? [children] : [];
         }
 
