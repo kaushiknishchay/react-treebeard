@@ -6,6 +6,7 @@ import Container from '../src/components/Decorators/Container';
 import animations from '../src/themes/animations';
 import style from '../src/themes/default';
 import data from './mocks/data';
+import Header from '../src/components/Decorators/Header';
 
 const onClick = jest.fn();
 const onSelect = jest.fn();
@@ -30,11 +31,7 @@ describe('<Container/>', () => {
         it('should contains a decorators.Header into their children', () => {
             const wrapper = renderComponent({terminal: true});
             expect(
-                wrapper
-                    .children()
-                    .contains(
-                        <decorators.Header node={data} style={style.tree.node.header}/>
-                    )
+                wrapper.find(Header).exists()
             ).toBe(true);
         });
     });
